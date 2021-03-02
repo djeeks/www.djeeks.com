@@ -1,0 +1,146 @@
+body {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	margin: auto;
+}
+
+header {
+	background-color: #B3B6B7;
+	border-radius: 8px 8px 0 0;
+	position: relative;
+	height: 150px;
+}
+
+#logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	padding-top: 10px;
+	padding-left: 10px;
+	width: 200px;
+	height: auto;
+	float: left;
+}
+
+header h1 {
+	padding-top: 30px;
+	text-align: center;
+}
+
+#top-menu, #top-menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+
+#top-menu li {
+	display: inline-block;
+	position: relative;
+	/*border-radius: 8px 8px 0 0;*/
+	width: 19%;
+}
+
+#top-menu ul li {
+	display: inherit;
+	border-radius: 0;
+	width: 100%;
+}
+
+#top-menu ul li:last-child {
+	border-radius: 0 0 8px 8px;
+}
+
+#top-menu a {
+	text-decoration: none;
+	display: block;
+	color: #000;
+}
+
+#top-menu ul {
+	position:absolute;
+	z-index: 1000;
+	max-height:0;
+	left: 0;
+	right: 0;
+	overflow:hidden;
+	-moz-transition: .8s all .3s;
+	-webkit-transition: .8s all .3s;
+	transition: .8s all .3s;
+}
+
+#top-menu li:hover ul {
+	max-height: 15em;
+}
+
+#top-menu li {
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+
+#top-menu li li{
+	background:#2A2333;
+}
+
+#top-menu li:hover, #top-menu li li:hover{
+	background:#65537A;
+}
+
+#top-menu a{
+	text-decoration:none;
+	display:block;
+	padding:8px 32px;
+	color:#fff;
+	font-family:arial;
+}
+
+#top-menu ul a{
+	padding:8px 0;
+}
+
+#top-menu li:hover li a{
+	color: #fff;
+	text-transform:inherit;
+}
+
+#top-menu li:hover a, #top-menu li li:hover a{
+	color: #000;
+}
+
+section {
+	padding: 10px;
+	color: black;
+	background-color: #B3B6B7;
+}
+
+section h2 {
+	text-align: center;
+}
+
+section span {
+	/*color: #FFFFF0;*/
+	color: #65537A;
+}
+
+.table_body {
+	margin: auto;
+}
+
+footer {
+	background-color: #65537A;
+	border-radius: 0 0 8px 8px;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer p {
+	text-align: center;
+	color: white;
+	font-size: 0.8em;
+}
