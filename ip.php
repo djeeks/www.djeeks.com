@@ -10,7 +10,6 @@
 	<h3>Informations sur les interfaces réseau</h3>
 
 	<p>
-
 		Initialement, pour connaître des interfaces réseau disponibles sur une machine, on pouvait utiliser la commande <span>ifconfig</span>. Cependant, cette commande étant passée en statut ''deprecated'', nous allons voir comment la commande ip peut la remplacer :
 
 		Pour obtenir des informations sur les interfaces réseau, il existe deux commandes :<br />
@@ -20,13 +19,11 @@
 		</ul>
 
 		Pour afficher des informations supplémentaires, notamment relatives aux trafic entrants ou sortants, il est possible d'utiliser des arguments : <span>ip -s l show dev eth0</span>.<br />
-
 	</p>
 
 	<h3>Gérer les interfaces réseau</h3>
 
 	<p>
-
 		Lorsque les interfaces réseau sont bien configurées via le fichier /etc/network/interfaces, on peut les activer avec la commande <span>ip link set eth0 up</span>.<br />
 		Il est également possible de les désactiver via <span>ip link set eth0 down</span>.<br />
 
@@ -35,13 +32,11 @@
 		Attention : Pour cette dernière commande, comme pour <span>ifconfig eth0 192.168.0.10 netmask 255.255.255.0</span>, les informations seront perdues lors du redémarrage de la machine, si elles ne sont pas enregistrées dans /etc/network/interfaces.<br/>
 
 		Enfin, la commande ip permet de modifier le nom d'une interface réseau : <span>ip link set dev eth0 name mon_interface</span>.<br />
-
 	</p>
 
 	<h3>Gestion de la table de routage</h3>
 	
 	<p>
-
 		La commande ip peut également être utilisée pour modifier la table de routage.<br />
 		Pour accéder à la table de routage, il suffit de lancer la commande <span>ip route show</span> qui est l'équivalent de la commande <span>route -n</span>.<br />
 
@@ -55,8 +50,16 @@
 
 		Le gateway par défaut peut être définie par la commande :<br />
 		<span>ip route add default via 192.168.0.1</span><br />
-
 	</p>
+
+  <h3>Gestion de la table ARP</h3>
+
+  <p>
+    La commande ip permet également de consulter la table ARP, en remplacement de l'ancienne commande arp (qui est dépréciée). Elle s'utilise de la maniière suivante :<br />
+    <span>ip neigh show</span>.
+    Il est également possible de supprimer ou d'ajouter des entrées dans la table ARP :<br />
+    <span>ip neigh del 192.168.0.1 dev eth0</span> et <span>ip neigh add 192.168.0.1 dev eth0</span>.
+  </p>
 
 </section>
 
