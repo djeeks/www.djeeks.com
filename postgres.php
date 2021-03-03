@@ -61,7 +61,7 @@
 
 		La métdode ident sameuser signifie que l'utilisateur Unix et PostgreSQL doivent être les mêmes. Cette métdode ne doit être utilisée qu'en local et est très risquée sur internet. La métdode md5 identifie l'utilisateur à partir du hash md5 de son password.<br /><br />
 
-		Après avoir modifié le fichier pg_hba.conf, il est nécessaire de recharger la configuration de PostgreSQL via <span>systemctl reload postgresql</span>.
+		Après avoir modifié le fichier pg_hba.conf, il est nécessaire de recharger la configuration de PostgreSQL via <span>systemctl reload postgresql</span>. Il est également possible de recharger le fichier contenu du fichier pg_hba.conf via la commande <span>SELECT pg_reload_conf();</span>.
 	</p>
 
 	<h3>Naviguer entre les bases</h3>
@@ -80,6 +80,13 @@
 
 		Enfin, pour quitter postgresql, il faut saisir la commande <span>\q</span>.
 	</p>
+
+  <h3>Commandes utiles</h3>
+
+  <p>
+    Pour lister les requêtes actuellement en cours d'exécution sur PostgreSQL, il faut tapper la commande :<br />
+    <span>SELECT * FROM pg_stat_activity;</span>
+  </p>
 
 </section>
 
